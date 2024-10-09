@@ -101,5 +101,3 @@ The React app will run on `http://localhost:3000`, and the Flask backend on `htt
 - Add database support (e.g., SQLite, PostgreSQL)
 
 Feel free to modify and extend this application as needed!
-
-![Project Screenshot](./ToDoList.png)
