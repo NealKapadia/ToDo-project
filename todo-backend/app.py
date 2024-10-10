@@ -20,6 +20,15 @@ def add_task():
     tasks.append(new_task)
     return jsonify(new_task), 201
 
+@app.route('/tasks/<int:task_id>', methods=['DELETE'])
+def remove_task(task_id):
+    task_to_remove = next((task for task in tasks if task['id'] == task_id), None)
+    
+    if task_to_remove is None:
+        return jsonify({"error": "Task not found"}), 404
+    
+    tasks = [task for task in tasks if task['id'] != task_id]
+    return jsonify({"message": "Task removed successfully"}), 200
 
 
 if __name__ == "__main__":
